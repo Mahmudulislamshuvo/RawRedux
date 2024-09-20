@@ -1,0 +1,17 @@
+.buttondiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.buttondiv button {
+  padding: 10px 15px;
+  background-color: chartreuse;
+  font-size: 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: darkblue;
+  margin: 0 10px;
+}
