@@ -1,20 +1,22 @@
+import { INCREMENT, DECREMENT, RESET } from "../Constant/Constant";
+
 const Increment = (data) => {
   return {
-    type: "increment",
+    type: INCREMENT,
     payload: data,
   };
 };
 
 const Decrement = (data) => {
   return {
-    type: "decrements",
+    type: DECREMENT,
     payload: data,
   };
 };
 
 const Reset = () => {
   return {
-    type: "reset",
+    type: RESET,
   };
 };
 

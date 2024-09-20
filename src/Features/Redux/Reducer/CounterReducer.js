@@ -1,3 +1,5 @@
+import { INCREMENT, DECREMENT, RESET } from "../Constant/Constant";
+
 const Initialstate = {
   value: 0,
 };
@@ -5,19 +7,19 @@ const Initialstate = {
 const ReducerCounter = (state = Initialstate, action) => {
   const { type, payload } = action;
   switch (type) {
-    case "increment": {
+    case INCREMENT: {
       return {
         ...state,
         value: state.value + 1,
       };
     }
-    case "decrements": {
+    case DECREMENT: {
       return {
         ...state,
         value: state.value - 1,
       };
     }
-    case "reset": {
+    case RESET: {
       return {
         ...state,
         value: (state.value = 0),
@@ -27,7 +29,6 @@ const ReducerCounter = (state = Initialstate, action) => {
       return state;
     }
   }
-  console.log("From CounterReducer", action);
 };
 
 export { ReducerCounter };
