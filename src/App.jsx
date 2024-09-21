@@ -1,31 +1,22 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Increment, Decrement, Reset } from "./Features/Redux/Action/Action";
+import {
+  increment,
+  decrement,
+  reset,
+} from "./Features/Redux/AllSlice/Counterslice";
 
 function App() {
   const dispatch = useDispatch();
-  const value = useSelector((state) => state.value);
-
-  const HandleIncrement = () => {
-    dispatch(Increment());
-  };
-
-  const HandleDecrement = () => {
-    dispatch(Decrement());
-  };
-
-  const HandleReset = () => {
-    dispatch(Reset());
-  };
-
+  const value = useSelector((state) => state.count.value);
   return (
     <div>
       <div className="buttondiv">
         <h1>count : {value}</h1>
         <div>
-          <button onClick={HandleIncrement}>Increment</button>
-          <button onClick={HandleDecrement}>Decriment</button>
-          <button onClick={HandleReset}>Total</button>
+          <button onClick={() => dispatch(increment())}>Increment</button>
+          <button onClick={() => dispatch(decrement())}>Decrement</button>
+          <button onClick={() => dispatch(reset())}>Reset</button>
         </div>
       </div>
     </div>
